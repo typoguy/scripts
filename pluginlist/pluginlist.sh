@@ -1,18 +1,42 @@
 #!/bin/bash
 
-# pluginlist.sh [JAR FILE]
-#
 # Lists the name and version of bukkit plugins
 # in your plugins directory.
 
 pluginyml="plugin.yml"
+
 function grabdata () {
-	name="$(unzip -p $1 $pluginyml | tr -d '\r' | awk '/name:/ {print $2}')"
-	version="$(unzip -p $1 $pluginyml | tr -d '\r' | awk '/version:/ {print $2}')"
+	name="$(unzip -p $i $pluginyml | tr -d '\r' | awk '/name:/ {print $2}')"
+	version="$(unzip -p $i $pluginyml | tr -d '\r"' | awk '/version:/ {print $2}')"
 }
-if [ "$1" ]; then
-	grabdata $1
+
+function showdata () {
 	echo "$name $version"
+}
+
+if [ "$#" == 0 ]; then
+	echo "Try $0 -h for help."
 else
-	echo "Syntax: $0 [JAR FILE]"
+	for i in "$@"; do
+		if [ -f "$i" ]; then
+			grabdata "$i"
+			showdata
+		else
+			while getopts ":h" opts; do
+				case $opts in
+					h)
+						echo "Usage: $0 [FILE].."
+						echo " Examples:"
+						echo "  $0 Plugin.jar"
+						echo "  $0 Plugin1.jar Plugin2.jar"
+						echo "  $0 *.jar"
+						;;
+					\?)
+						echo "Invalid option: -$OPTARG. Use: $0 -h"
+						exit
+						;;
+				esac
+			done
+		fi
+	done
 fi
