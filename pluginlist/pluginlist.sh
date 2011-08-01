@@ -6,8 +6,8 @@
 pluginyml="plugin.yml"
 
 function grabdata () {
-	name="$(unzip -p $i $pluginyml | tr -d '\r\042' | awk '/name:/ {print $2}')"
-	version="$(unzip -p $i $pluginyml | tr -d '\r\042' | awk '/version:/ {print $2}')"
+	name="$(unzip -p $i $pluginyml | tr -d '\r\042\047' | awk '/name:/ {print $2}')"
+	version="$(unzip -p $i $pluginyml | tr -d '\r\042\047' | awk '/version:/ {print $2}')"
 }
 
 function showdata () {
