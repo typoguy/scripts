@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Lists the name and version of bukkit plugins
-# in your plugins directory.
 
 pluginyml="plugin.yml"
 
