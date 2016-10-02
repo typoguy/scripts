@@ -20,3 +20,6 @@ fixfn
 
 pluginlist
   Uses unzip to grab the name and version number from a CraftBukkit plugin jar
+
+sshosts
+  Python 2 and 3 compatible: Lists the ssh hosts (Host keyword) in your ssh_config file.
