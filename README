@@ -1,9 +1,22 @@
-http://github.com/typophase/scripts
 A repository for various scripts that do not deserve their own space.
 
 Note
------
+--------
+
 I'm sure there are more efficient ways to accomplish the tasks that these
 scripts do. If you see something that you think could be a lot better and
 want to let me know, then please do! Otherwise, I hope they're useful to
 someone else besides myself.
+
+
+Scripts
+--------
+
+convert
+  Uses ffmpeg to convert files to mp3
+
+fixfn
+  Clean up filenames by replacing spaces with underscores and removing these characters: &()[]{}
+
+pluginlist
+  Uses unzip to grab the name and version number from a CraftBukkit plugin jar
