@@ -5,6 +5,7 @@
 // @author       Phase
 // @match        https://www.curseforge.com/wow/addons
 // @grant        none
+// @namespace    phase
 // ==/UserScript==
 
 $("#filter-game-version option:contains(WoW Classic)").attr('selected', 'selected');
