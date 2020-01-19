@@ -22,4 +22,7 @@ pluginlist
   Uses unzip to grab the name and version number from a CraftBukkit plugin jar
 
 sshosts
-  Python 2 and 3 compatible: Lists the ssh hosts (Host keyword) in your ssh_config file.
+  Python 2 and 3 compatible: Lists the ssh hosts (Host keyword) in your ssh_config file
+
+autoselectwowclassic
+  A userscript to automatically select the "WoW Classic" category on Curseforge's WoW addon section
